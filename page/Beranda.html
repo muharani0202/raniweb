@@ -6,6 +6,60 @@
   <title>Halaman dengan Banner & Tab</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+  <style>
+  /* 1. Pastikan tidak ada overflow horizontal di seluruh halaman */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* <- Penting */
+  width: 100%;
+}
+
+/* 2. Pastikan semua container dan grid tidak melebihi lebar layar */
+.grid-container,
+.content-area,
+.slider-track,
+.film-slider {
+  overflow-x: auto; /* user bisa scroll horizontal */
+  width: 100%;
+  position: relative;
+}
+
+.film-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  /* animation: scrollSlider 40s linear infinite; */
+}
+
+.slider-track img {
+  height: 200px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  border-radius: 10px;
+}
+
+/* Animasi marquee horizontal */
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+</style>
 <body>
 <div class="banner"></div>
   <h1 style="text-align: center;">Selamat Datang di Disney</h1>
