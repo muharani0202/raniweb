@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman dengan Banner & Tab</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="banner"></div>
+  <h1 style="text-align: center;">Selamat Datang di Disney</h1>
+
+  <nav class="navbar">
+    <a href="../page/Beranda.html" onclick="showTab('beranda')">Beranda</a>
+    <a href="../page/Film.html" onclick="showTab('film')">Film</a>
+    <a href="../page/kontak.html" onclick="showTab('kontak')">Kontak</a>
+    <a href="../page/parks.html" onclick="showTab('parks')">Parks</a>
+  </nav>
+<div class="main-content">
+  <section class="trailers">
+    <h2>Trailer Film Disney Populer</h2>
+
+    <div class="trailer-list">
+      <!-- Frozen II -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/Zi4LMpSDccc" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Frozen II</strong><br>Elsa dan Anna memulai perjalanan ke hutan ajaib untuk mengungkap asal-usul kekuatan Elsa.</p>
+      </div>
+
+      <!-- Moana -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/LKFuXETZUsI" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Moana</strong><br>Seorang gadis pemberani dari Polinesia berlayar mencari dewa demi menyelamatkan pulau tempat tinggalnya.</p>
+      </div>
+
+      <!-- Encanto -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/CaimKeDcudo" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Encanto</strong><br>Mirabel satu-satunya anggota keluarga yang tidak memiliki kekuatan sihir, tapi mungkin dialah harapan terakhir mereka.</p>
+      </div>
+
+      <!-- Tangled -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/2f516ZLyC6U" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Tangled</strong><br>Rapunzel si putri berambut panjang melarikan diri dari menara dan menemukan dunia luar bersama pencuri bernama Flynn.</p>
+      </div>
+
+      <!-- The Lion King -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/7TavVZMewpY" frameborder="0" allowfullscreen></iframe>
+        <p><strong>The Lion King</strong><br>Simba harus menemukan jati dirinya dan merebut kembali takhta dari pamannya yang licik, Scar.</p>
+      </div>
+
+      <!-- Mulan -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/KK8FHdFluOQ" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Mulan</strong><br>Gadis Tiongkok yang menyamar sebagai prajurit laki-laki untuk menyelamatkan ayahnya dan bangsanya.</p>
+      </div>
+
+      <!-- Raya and the Last Dragon -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/1VIZ89FEjYI" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Raya and the Last Dragon</strong><br>Raya mencari naga terakhir untuk menyatukan kembali kerajaan Kumandra yang terpecah.</p>
+      </div>
+
+      <!-- Zootopia -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/jWM0ct-OLsM" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Zootopia</strong><br>Seekor kelinci polisi dan rubah penipu bekerja sama menyelesaikan misteri di kota binatang Zootopia.</p>
+      </div>
+
+      <!-- Inside Out -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/seMwpP0yeu4" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Inside Out</strong><br>Film tentang emosi yang hidup di dalam kepala seorang gadis kecil bernama Riley.</p>
+      </div>
+
+      <!-- Coco -->
+      <div class="trailer-item">
+        <iframe width="300" height="170" src="https://www.youtube.com/embed/Ga6RYejo6Hk" frameborder="0" allowfullscreen></iframe>
+        <p><strong>Coco</strong><br>Miguel masuk ke dunia arwah untuk mengungkap rahasia keluarganya dan mengejar impiannya menjadi musisi.</p>
+      </div>
+    </div>    
+  </section>
+</div>
+
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</script>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Teknologi Informasi, Prodi Sistem Informasi, Politeknik negeri padang. All rights reserved.</p>
+    <p>Ikuti Saya di:
+      <a href="https://www.instagram.com/_muharani02?igsh=MXM0ZjB6enJyMmxieg==">Instagram</a> |
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

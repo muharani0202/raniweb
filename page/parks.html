@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman dengan Banner & Tab</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="banner"></div>
+
+  <nav class="navbar">
+    <a href="../page/Beranda.html" onclick="showTab('beranda')">Beranda</a>
+    <a href="../page/Film.html" onclick="showTab('film')">Film</a>
+    <a href="../page/kontak.html" onclick="showTab('kontak')">Kontak</a>
+    <a href="../page/parks.html" onclick="showTab('parks')">Parks</a>
+  </nav>
+
+  <section class="image-grid">
+  <img src="../assets/images/part/unduhan.jpg" alt=" 1">
+  <img src="../assets/images/part/unduhan (1).jpg" alt="2">
+  <img src="../assets/images/part/unduhan (2).jpg" alt="3">
+  <img src="../assets/images/part/unduhan (3).jpg" alt="4">
+  <img src="../assets/images/part/unduhan (4).jpg" alt="5">
+  <img src="../assets/images/part/unduhan (5).jpg" alt="6">
+  <img src="../assets/images/part/unduhan (7).jpg" alt="7">
+  <img src="../assets/images/part/unduhan (8).jpg" alt="8">
+  <img src="../assets/images/part/unduhan (9).jpg" alt="9">
+  <img src="../assets/images/part/images.jpg" alt="10">
+</section>
+
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Teknologi Informasi, Prodi Sistem Informasi, Politeknik negeri padang. All rights reserved.</p>
+    <p>Ikuti Saya di:
+      <a href="https://www.instagram.com/_muharani02?igsh=MXM0ZjB6enJyMmxieg==">Instagram</a> |
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>

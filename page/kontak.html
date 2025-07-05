@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman dengan Banner & Tab</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="banner"></div>
+
+  <nav class="navbar">
+    <a href="../page/Beranda.html" onclick="showTab('beranda')">Beranda</a>
+    <a href="../page/Film.html" onclick="showTab('film')">Film</a>
+    <a href="../page/kontak.html" onclick="showTab('kontak')">Kontak</a>
+    <a href="../page/parks.html" onclick="showTab('parks')">Parks</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+  <div class="contact-container">
+  <!-- Informasi Kontak -->
+  <section class="info-box">
+    <h3>Informasi Kontak</h3>
+    <img src="../assets/mukacantik/wanted.jpg" alt="Foto Muharani" class="profile-pic" />
+    <p><strong>Muharani</strong></p>
+    <p>NIM: 2401162012</p>
+    <p>Email: <a href="mailto:muharani0202@gmail.com">muharani0202@gmail.com</a></p>
+    <p>Nomor: 0831-6498-2520</p>
+  </section>
+
+  <!-- Form Kontak -->
+  <section class="form-box">
+    <h2>Form Kontak</h2>
+    <form id="whatsappForm" onsubmit="sendToWhatsApp(); return false;">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </section>
+</div>
+
+
+</main>
+
+
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+  <script>
+  function sendToWhatsApp() {
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const pesan = document.getElementById("pesan").value;
+
+    const phoneNumber = "6283164982520"; // gunakan format internasional (62 untuk Indonesia)
+
+    const message = `Halo, saya ${nama}.\nEmail: ${email}\nPesan:\n${pesan}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+</script>
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Teknologi Informasi, Prodi Sistem Informasi, Politeknik negeri padang. All rights reserved.</p>
+    <p>Ikuti Saya di:
+      <a href="https://www.instagram.com/_muharani02?igsh=MXM0ZjB6enJyMmxieg==">Instagram</a> |
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

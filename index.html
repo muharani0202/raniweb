@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman dengan Banner & Tab</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<style>
+  /* 1. Pastikan tidak ada overflow horizontal di seluruh halaman */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* <- Penting */
+  width: 100%;
+}
+
+/* 2. Pastikan semua container dan grid tidak melebihi lebar layar */
+.grid-container,
+.content-area,
+.slider-track,
+.film-slider {
+  max-width: 100%;
+  overflow-x: auto; /* agar konten bisa scroll horizontal jika terlalu panjang */
+}
+
+/* 3. Untuk gambar dalam slider, hindari lebar berlebihan */
+.slider-track img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+/* 4. Cegah animasi slider mendorong ke kanan */
+.slider-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+/* 5. Tambahan untuk responsif mobile */
+@media (max-width: 768px) {
+  .slider-track img {
+    height: 140px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Ubah layout jadi satu kolom */
+  }
+}
+
+</style>
+<body>
+<div class="banner"></div>
+  <h1 style="text-align: center;">Selamat Datang di Disney</h1>
+
+  <nav class="navbar">
+    <a href="./page/Beranda.html" onclick="showTab('beranda')">Beranda</a>
+    <a href="./page/Film.html" onclick="showTab('film')">Film</a>
+    <a href="./page/kontak.html" onclick="showTab('kontak')">Kontak</a>
+    <a href="./page/parks.html" onclick="showTab('parks')">Parks</a>
+  </nav>
+
+  <!-- Tab Sections -->
+  <div id="beranda" class="tab-content active">
+    <!-- <h2>Semua Film</h2>
+    <p>Selamat datang di website kami. Ini adalah halaman utama.</p> -->
+  </div>
+
+  <div id="film" class="tab-content">
+    <h2>film</h2>
+    <p>Kami menawarkan berbagai fitur menarik untuk kebutuhan Anda.</p>
+  </div>
+
+  <div id="parks" class="tab-content">
+    <h2>parks</h2>
+    <p>Silakan hubungi kami melalui email: info@website.com atau WA: 0812-3456-7890</p>
+  </div>
+
+  <div id="kontak" class="tab-content">
+    <h2>kontak</h2>
+    <p>Silfakan hubungi kami melalui email: info@website.com atau WA: 0812-3456-7890</p>
+  </div>
+    <section class="grid-container">
+  <!-- Sidebar kiri -->
+<div class="sidebar">
+  <h3>Kategori</h3>
+  <ul>
+    <li class="active" onclick="showCategory('semua')">Semua Film</li>
+    <li onclick="showCategory('animasi')">Animasi</li>
+    <li onclick="showCategory('live')">Live Action</li>
+    <li onclick="showCategory('marvel')">Marvel</li>
+    <li onclick="showCategory('pixar')">Pixar</li>
+  </ul>
+</div>
+
+
+  <!-- Konten kanan -->
+  <div class="content-area" id="contentArea">
+    <!-- Isi awal -->
+    <h2>Semua Film</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <li class="active" onclick="showCategory('semua')"></li>
+        <img src="assets/images/film1.jfif" alt="Film 1">
+        <img src="./assets/images/film2.jfif" alt="Film 2">
+        <img src="./assets/images/film3.jfif" alt="Film 3">
+        <img src="./assets/images/film4.jfif" alt="Film 4">
+        <img src="./assets/images/film5.jfif" alt="film 5">
+        <img src="./assets/images/film6.jfif" alt="film 6">
+        <img src="./assets/images/film7.jfif" alt="film 7">
+        <img src="./assets/images/film8.jfif" alt="film 8">
+        <img src="./assets/images/film9.jfif" alt="film 9">
+        <img src="./assets/images/film10.jfif" alt="film 10">
+      </div>
+    </div>
+    <h2>animasi</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <li class="active" onclick="showCategory('animasi')"></li>
+        <img src="./assets/images/animasi/A.jpg" alt="animasi A">
+        <img src="./assets/images/animasi/B.jpg" alt="animasi B">
+        <img src="./assets/images/animasi/C.jpg" alt="animasi C">
+        <img src="./assets/images/animasi/D.jpg" alt="animasi D">
+        <img src="./assets/images/animasi/E.jpg" alt="animasi e">
+        <img src="./assets/images/animasi/F.jpg" alt="Animasi f">
+        <img src="./assets/images/animasi/G.jpg" alt="animasi G">
+        <img src="./assets/images/animasi/H.jpg" alt="animasi h">
+        <img src="./assets/images/animasi/j.jpg" alt="animasi j">
+        <img src="./assets/images/animasi/K.jpg" alt="Animasi K">
+        <img src="./assets/images/animasi/L.jpg" alt="animasi L">
+        <img src="./assets/images/animasi/M.jpg" alt="Animasi M">
+        <img src="./assets/images/animasi/N.jpg" alt="Animasi N ">
+      </div>
+    </div>
+    <h2>action</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <li class="active" onclick="showCategory('action')"></li>
+        <img src="./assets/images/action/1.jpg" alt="Film 1">
+        <img src="./assets/images/action/2.jpg" alt="Film 2">
+        <img src="./assets/images/action/3.jpg" alt="Film 3">
+        <img src="./assets/images/action/4.jpg" alt="Film 4">
+        <img src="./assets/images/action/5.jpg" alt="Film 5">
+        <img src="./assets/images/action/6.jpg" alt="Film 6">
+        <img src="./assets/images/action/7.jpg" alt="Film 7">
+        <img src="./assets/images/action/8.jpg" alt="Film 8">
+         <img src="./assets/images/action/9.jpg" alt="Film 9">
+        <img src="./assets/images/action/10.jpg" alt="Film 10">
+      </div>
+    </div>
+    <h2>Marvel</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <li class="Marvel" onclick="showCategory('Marvel')"></li>
+        <img src="./assets/images/marvel/1.jpg" alt="marvel 1">
+        <img src="./assets/images/marvel/2.jpg" alt="marvel 2">
+        <img src="./assets/images/marvel/3.jpg" alt="marvel 3">
+        <img src="./assets/images/marvel/4.jpg" alt="marvel 4">
+        <img src="./assets/images/marvel/5.jpg" alt="marvel 5">
+        <img src="./assets/images/marvel/6.jpg" alt="marvel 6 ">
+        <img src="./assets/images/marvel/7.jpg" alt="marvel 7 ">
+        <img src="./assets/images/marvel/8.jpg" alt="marvel 8 ">
+        <img src="./assets/images/marvel/9.jpg" alt="marvel 9">
+        <img src="./assets/images/marvel/10.jpg" alt="marvel 10 ">
+        
+      </div>
+    </div>
+    <h2>action</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <li class="active" onclick="showCategory('pixar')"></li>
+        <img src="./assets/images/pixar/1.jpg" alt="pixar 1">
+        <img src="./assets/images/pixar/2.jpg" alt="pixar 2">
+        <img src="./assets/images/pixar/3.jpg" alt="pixar 3">
+        <img src="./assets/images/pixar/4.jpg" alt="pixar 4">
+        <img src="./assets/images/pixar/5.jpg" alt="pixar 5">
+        <img src="./assets/images/pixar/6.jpg" alt="pixar 6">
+        <img src="./assets/images/pixar/7.jpg" alt="pixar 7">
+        <img src="./assets/images/pixar/8.jpg" alt="pixar 8">
+         <img src="./assets/images/pixar/9.jpg" alt="pixar 9">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+  <script>
+function showCategory(category) {
+  const content = document.getElementById('contentArea');
+  const sidebarItems = document.querySelectorAll('.sidebar li');
+
+  // Hapus highlight aktif
+  sidebarItems.forEach(item => item.classList.remove('active'));
+
+  // Tambahkan highlight ke kategori yang diklik
+  const clickedItem = [...sidebarItems].find(item =>
+    item.textContent.toLowerCase().includes(category)
+  );
+  if (clickedItem) clickedItem.classList.add('active');
+
+  // Tampilkan isi sesuai kategori
+  let html = '';
+  if (category === 'semua') {
+    html = `
+      <h2>Semua Film</h2>
+      <div class="film-slider">
+        <div class="slider-track">
+        <img src="assets/images/film1.jfif" alt="Film 1">
+        <img src="./assets/images/film2.jfif" alt="Film 2">
+        <img src="./assets/images/film3.jfif" alt="Film 3">
+        <img src="./assets/images/film4.jfif" alt="Film 4">
+        <img src="./assets/images/film5.jfif" alt="film 5">
+        <img src="./assets/images/film6.jfif" alt="film 6">
+        <img src="./assets/images/film7.jfif" alt="film 7">
+        <img src="./assets/images/film8.jfif" alt="film 8">
+        <img src="./assets/images/film9.jfif" alt="film 9">
+        <img src="./assets/images/film10.jfif" alt="film 10">
+        </div>
+      </div>`;
+  } else if (category === 'animasi') {
+  html = `
+    <h2>Film Animasi</h2>
+    <div class="film-slider">
+      <div class="slider-track">
+        <img src="./assets/images/animasi/A.jpg" alt="animasi A">
+        <img src="./assets/images/animasi/B.jpg" alt="animasi B">
+        <img src="./assets/images/animasi/C.jpg" alt="animasi C">
+        <img src="./assets/images/animasi/D.jpg" alt="animasi D">
+        <img src="./assets/images/animasi/E.jpg" alt="animasi e">
+        <img src="./assets/images/animasi/F.jpg" alt="Animasi f">
+        <img src="./assets/images/animasi/G.jpg" alt="animasi G">
+        <img src="./assets/images/animasi/H.jpg" alt="animasi h">
+        <img src="./assets/images/animasi/j.jpg" alt="animasi j">
+        <img src="./assets/images/animasi/K.jpg" alt="Animasi K">
+        <img src="./assets/images/animasi/L.jpg" alt="animasi L">
+        <img src="./assets/images/animasi/M.jpg" alt="Animasi M">
+        <img src="./assets/images/animasi/N.jpg" alt="Animasi N ">
+      </div>
+    </div>`;
+}
+ else if (category === 'live') {
+    html = `
+      <h2>Live Action</h2>
+      <div class="film-slider">
+        <div class="slider-track">
+        <img src="./assets/images/action/1.jpg" alt="Film 1">
+        <img src="./assets/images/action/2.jpg" alt="Film 2">
+        <img src="./assets/images/action/3.jpg" alt="Film 3">
+        <img src="./assets/images/action/4.jpg" alt="Film 4">
+        <img src="./assets/images/action/5.jpg" alt="Film 5">
+        <img src="./assets/images/action/6.jpg" alt="Film 6">
+        <img src="./assets/images/action/7.jpg" alt="Film 7">
+        <img src="./assets/images/action/8.jpg" alt="Film 8">
+         <img src="./assets/images/action/9.jpg" alt="Film 9">
+        <img src="./assets/images/action/10.jpg" alt="Film 10">
+        </div>
+      </div>`;
+  } else if (category === 'marvel') {
+    html = `
+      <h2>Marvel</h2>
+      <div class="film-slider">
+        <div class="slider-track">
+        <img src="./assets/images/marvel/1.jpg" alt="marvel 1">
+        <img src="./assets/images/marvel/2.jpg" alt="marvel 2">
+        <img src="./assets/images/marvel/3.jpg" alt="marvel 3">
+        <img src="./assets/images/marvel/4.jpg" alt="marvel 4">
+        <img src="./assets/images/marvel/5.jpg" alt="marvel 5">
+        <img src="./assets/images/marvel/6.jpg" alt="marvel 6 ">
+        <img src="./assets/images/marvel/7.jpg" alt="marvel 7 ">
+        <img src="./assets/images/marvel/8.jpg" alt="marvel 8 ">
+        <img src="./assets/images/marvel/9.jpg" alt="marvel 9">
+        <img src="./assets/images/marvel/10.jpg" alt="marvel 10 ">
+        </div>
+      </div>`;
+  } else if (category === 'pixar') {
+    html = `
+      <h2>Pixar</h2>
+      <div class="film-slider">
+        <div class="slider-track">
+        <img src="./assets/images/pixar/1.jpg" alt="pixar 1">
+        <img src="./assets/images/pixar/2.jpg" alt="pixar 2">
+        <img src="./assets/images/pixar/3.jpg" alt="pixar 3">
+        <img src="./assets/images/pixar/4.jpg" alt="pixar 4">
+        <img src="./assets/images/pixar/5.jpg" alt="pixar 5">
+        <img src="./assets/images/pixar/6.jpg" alt="pixar 6">
+        <img src="./assets/images/pixar/7.jpg" alt="pixar 7">
+        <img src="./assets/images/pixar/8.jpg" alt="pixar 8">
+         <img src="./assets/images/pixar/9.jpg" alt="pixar 9">
+        </div>
+      </div>`;
+  }
+
+  // Masukkan konten baru ke area kanan
+  content.innerHTML = html;
+}
+
+</script>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Teknologi Informasi, Prodi Sistem Informasi, Politeknik negeri padang. All rights reserved.</p>
+    <p>Ikuti Saya di:
+      <a href="https://www.instagram.com/_muharani02?igsh=MXM0ZjB6enJyMmxieg==">Instagram</a> |
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
